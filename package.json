@@ -1,0 +1,25 @@
+{
+  "name": "study-device-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/howdy39/study-device-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/howdy39/study-device-api/issues"
+  },
+  "homepage": "https://github.com/howdy39/study-device-api#readme",
+  "devDependencies": {
+    "onchange": "^4.0.0",
+    "prettier": "1.12.1"
+  }
+}
