@@ -5,6 +5,6 @@ if (window.DeviceMotionEvent) {
     const y = parseFloat(event.acceleration.y);
     const z = parseFloat(event.acceleration.z);
 
-    console.log("(x, y, z):(%s, %s, %s)");
+    console.log("(x, y, z):(%s, %s, %s)", x, y, z);
   });
 }
