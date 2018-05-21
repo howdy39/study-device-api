@@ -17,3 +17,9 @@ https://developers.google.com/web/fundamentals/native-hardware/device-orientatio
 
 ### demo
 https://howdy39.github.io/study-device-api/device-orientation/
+
+## DeviceMotion API
+https://developers.google.com/web/fundamentals/native-hardware/device-orientation/#_9
+
+### demo
+https://howdy39.github.io/study-device-api/device-motion/
