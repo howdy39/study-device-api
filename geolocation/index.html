@@ -2,19 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>GeoLocation</title>
+  <title>Geo Location API</title>
 
   <style>
-    html, body, #map {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+    [v-cloak] {
+      display:none;
+    }
+    dt {
+      font-weight: bold;
+      margin: 0 0 5px 0;
+    }
+    dd {
+      margin: 0 0 20px 40px;
     }
   </style>
 </head>
 <body>
-<div id="map"></div>
+<div id="app" v-cloak>
+  <h1>Geo Location API</h1>
+  <dl>
+    <dt>緯度(-90〜90)</dt>
+    <dd>{{latitude | showNull}}</dd>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFbYxhyD8zKleiXY8O7wxuRZvUGtJTldk&v=3.exp&sensor=false"></script>
-<script src="script.js"></script>
+    <dt>経度(-180〜180)</dt>
+    <dd>{{longitude | showNull}}</dd>
+
+    <dt>緯度、経度の精度(m)</dt>
+    <dd>{{accuracy | showNull}}</dd>
+
+    <dt>高度(m)</dt>
+    <dd>{{altitude | showNull}}</dd>
+
+    <dt>高度の精度(m)</dt>
+    <dd>{{altitudeAccuracy | showNull}}</dd>
+
+    <dt>方角(0〜360 ※0が北)</dt>
+    <dd>{{heading | showNull}}</dd>
+
+    <dt>速度(m/s)</dt>
+    <dd>{{speed | showNull}}</dd>
+  </dl>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="index.js"></script>
 </body>

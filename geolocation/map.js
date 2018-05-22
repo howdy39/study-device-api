@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(position => {
+    navigator.geolocation.watchPosition(position => {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
       console.info("lat:%s, lon:%s", lat, lon);
