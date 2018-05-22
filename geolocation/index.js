@@ -1,4 +1,5 @@
 let data = {
+  message: '計測中です...',
   accuracy: null,
   altitude: null,
   altitudeAccuracy: null,
@@ -17,7 +18,7 @@ new Vue({
 });
 
 
-navigator.geolocation.getCurrentPosition(position => {
+const geoSuccess = position => {
   const accuracy = position.coords.accuracy;
   const altitude = position.coords.altitude;
   const altitudeAccuracy = position.coords.altitudeAccuracy;
@@ -27,6 +28,7 @@ navigator.geolocation.getCurrentPosition(position => {
   const speed = position.coords.speed;
 
   Object.assign(data, {
+    message: '計測完了',
     accuracy,
     altitude,
     altitudeAccuracy,
@@ -35,4 +37,21 @@ navigator.geolocation.getCurrentPosition(position => {
     longitude,
     speed,
   });
-});
+};
+const geoError = error => {
+  const errorMessages = {
+    1: '位置情報の利用が許可されていません！',
+    2: 'デバイスの位置が特定できません！',
+    3: 'タイムアウトしました！'
+  };
+  Object.assign(data, {
+    message: errorMessages[error.code]
+  })
+};
+const geoOptions = {
+  enableHighAccuracy: false, // 高精度の有効化
+  timeout: 5 * 1000, // タイムアウト(ms)
+  maximumAge: 10 * 60 * 1000 // 位置情報の有効期限(ms)
+};
+
+navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
