@@ -44,9 +44,7 @@ const geoError = error => {
     2: 'デバイスの位置が特定できません！',
     3: 'タイムアウトしました！'
   };
-  Object.assign(data, {
-    message: errorMessages[error.code]
-  })
+  data.message = errorMessages[error.code];
 };
 const geoOptions = {
   enableHighAccuracy: false, // 高精度の有効化
@@ -54,4 +52,8 @@ const geoOptions = {
   maximumAge: 10 * 60 * 1000 // 位置情報の有効期限(ms)
 };
 
-navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+} else {
+  data.message = '未対応ブラウザです';
+}
