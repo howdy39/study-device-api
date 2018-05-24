@@ -53,7 +53,7 @@ const geoOptions = {
 };
 
 if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+  navigator.geolocation.watchPosition(geoSuccess, geoError, geoOptions);
 } else {
   data.message = '未対応ブラウザです';
 }
