@@ -4,7 +4,10 @@ if (window.DeviceOrientationEvent) {
     const alpha = event.alpha; // 回転軸がZ軸
     const beta = event.beta; // 回転軸がX軸
     const gamma = event.gamma; // 回転軸がY軸
-    console.log("(alpha, beta, gamma):(%s, %s, %s)", alpha, beta, gamma);
+
+    const log = '(alpha, beta, gamma):(' + Math.ceil(alpha) + ',' + Math.ceil(beta) + ',' + Math.ceil(gamma) + ')';
+    console.log(log);
+    document.querySelector('#log').textContent = log;
 
     document.querySelector(
       "#howdy39"
