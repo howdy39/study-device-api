@@ -11,6 +11,6 @@ if (window.DeviceOrientationEvent) {
 
     document.querySelector(
       "#howdy39"
-    ).style.transform = `rotateX(${beta}deg) rotateY(${gamma}deg) rotateZ(${alpha}deg)`;
+    ).style.transform = `rotateX(${beta}deg) rotateY(${gamma}deg) rotateZ(-${alpha}deg)`;
   });
 }
