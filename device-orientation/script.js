@@ -6,7 +6,6 @@ if (window.DeviceOrientationEvent) {
     const gamma = event.gamma; // 回転軸がY軸
 
     const log = '(alpha, beta, gamma):(' + Math.ceil(alpha) + ',' + Math.ceil(beta) + ',' + Math.ceil(gamma) + ')';
-    console.log(log);
     document.querySelector('#log').textContent = log;
 
     document.querySelector(
