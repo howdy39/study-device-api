@@ -19,5 +19,13 @@ function showLog(event) {
   console.log(x,y,z);
 
   log += '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')'
+
+  if (Math.abs(x) > 5 || Math.abs(y) > 5 || Math.abs(z) > 5) {
+    const r = Math.random() * 255;
+    const g = Math.random() * 255;
+    const b = Math.random() * 255;
+    document.querySelector('body').style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
+  }
+  
   document.querySelector('#log').textContent = log;
 }
