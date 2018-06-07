@@ -13,14 +13,6 @@ function showLog(event) {
 
   let log = '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')<br>';
 
-  if (Math.abs(x) > 3 || Math.abs(y) > 3 || Math.abs(z) > 3) {
-    alert('aaa');
-    const r = Math.random() * 255;
-    const g = Math.random() * 255;
-    const b = Math.random() * 255;
-    document.querySelector('body').style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
-  }
-
   x = event.acceleration.x;
   y = event.acceleration.y;
   z = event.acceleration.z;
@@ -28,6 +20,12 @@ function showLog(event) {
 
   log += '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')'
 
-  alert('bbb');
+  if (Math.abs(x) > 3 || Math.abs(y) > 3 || Math.abs(z) > 3) {
+    const r = Math.random() * 255;
+    const g = Math.random() * 255;
+    const b = Math.random() * 255;
+    document.querySelector('body').style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
+  }
+
   document.querySelector('#log').textContent = log;
 }
