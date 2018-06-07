@@ -20,7 +20,7 @@ function showLog(event) {
 
   log += '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')'
 
-  if (Math.abs(x) > 6 || Math.abs(y) > 6 || Math.abs(z) > 6) {
+  if (Math.abs(x) > 10 || Math.abs(y) > 10 || Math.abs(z) > 10) {
     const r = Math.random() * 255;
     const g = Math.random() * 255;
     const b = Math.random() * 255;
