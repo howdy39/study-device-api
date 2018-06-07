@@ -11,13 +11,13 @@ function showLog(event) {
   let z = event.accelerationIncludingGravity.z; // 前後
   console.log(x,y,z);
 
-  let log = '(x, y, z):(' + x + ',' + y + ',' + z + ')\n';
+  let log = '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')\n';
 
-  x = parseFloat(event.acceleration.x);
-  y = parseFloat(event.acceleration.y);
-  z = parseFloat(event.acceleration.z);
+  x = event.acceleration.x;
+  y = event.acceleration.y;
+  z = event.acceleration.z;
   console.log(x,y,z);
 
-  log += '(x, y, z):(' + x + ',' + y + ',' + z + ')'
+  log += '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')'
   document.querySelector('#log').textContent = log;
 }
