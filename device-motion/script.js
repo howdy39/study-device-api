@@ -6,26 +6,18 @@ if (window.DeviceMotionEvent) {
 }
 
 function showLog(event) {
-  let x = event.accelerationIncludingGravity.x; // 左右
-  let y = event.accelerationIncludingGravity.y; // 上下
-  let z = event.accelerationIncludingGravity.z; // 前後
+  const x = event.acceleration.x;
+  const y = event.acceleration.y;
+  const z = event.acceleration.z;
   console.log(x,y,z);
 
-  let log = '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')\n';
+  const log = '(x, y, z):(\n' + x + ',\n' + y + ',\n' + z + ')';
+    document.querySelector('#log').textContent = log;
 
-  x = event.acceleration.x;
-  y = event.acceleration.y;
-  z = event.acceleration.z;
-  console.log(x,y,z);
-
-  log += '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')'
-
-  if (Math.abs(x) > 10 || Math.abs(y) > 10 || Math.abs(z) > 10) {
+  if (Math.abs(x) > 12 || Math.abs(y) > 12 || Math.abs(z) > 12) {
     const r = Math.random() * 255;
     const g = Math.random() * 255;
     const b = Math.random() * 255;
     document.querySelector('body').style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
   }
-
-  document.querySelector('#log').textContent = log;
 }
