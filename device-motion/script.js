@@ -28,5 +28,6 @@ function showLog(event) {
 
   log += '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')'
 
+  alert('bbb');
   document.querySelector('#log').textContent = log;
 }
