@@ -11,7 +11,7 @@ function showLog(event) {
   let z = event.accelerationIncludingGravity.z; // 前後
   console.log(x,y,z);
 
-  let log = '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')<br>';
+  let log = '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')\n';
 
   x = event.acceleration.x;
   y = event.acceleration.y;
