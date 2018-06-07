@@ -11,7 +11,7 @@ function showLog(event) {
   let z = event.accelerationIncludingGravity.z; // 前後
   console.log(x,y,z);
 
-  let log = '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')\n';
+  let log = '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')<br>';
 
   x = event.acceleration.x;
   y = event.acceleration.y;
@@ -21,11 +21,12 @@ function showLog(event) {
   log += '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')'
 
   if (Math.abs(x) > 5 || Math.abs(y) > 5 || Math.abs(z) > 5) {
+    alert('aaa');
     const r = Math.random() * 255;
     const g = Math.random() * 255;
     const b = Math.random() * 255;
     document.querySelector('body').style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
   }
-  
+
   document.querySelector('#log').textContent = log;
 }
