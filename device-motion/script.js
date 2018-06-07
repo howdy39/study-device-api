@@ -13,20 +13,20 @@ function showLog(event) {
 
   let log = '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')<br>';
 
-  x = event.acceleration.x;
-  y = event.acceleration.y;
-  z = event.acceleration.z;
-  console.log(x,y,z);
-
-  log += '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')'
-
-  if (Math.abs(x) > 5 || Math.abs(y) > 5 || Math.abs(z) > 5) {
+  if (Math.abs(x) > 3 || Math.abs(y) > 3 || Math.abs(z) > 3) {
     alert('aaa');
     const r = Math.random() * 255;
     const g = Math.random() * 255;
     const b = Math.random() * 255;
     document.querySelector('body').style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
   }
+
+  x = event.acceleration.x;
+  y = event.acceleration.y;
+  z = event.acceleration.z;
+  console.log(x,y,z);
+
+  log += '(x, y, z):(' + Math.ceil(x) + ',' + Math.ceil(y) + ',' + Math.ceil(z) + ')'
 
   document.querySelector('#log').textContent = log;
 }
